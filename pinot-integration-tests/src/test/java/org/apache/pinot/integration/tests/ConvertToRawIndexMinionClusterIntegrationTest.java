@@ -132,7 +132,7 @@ public class ConvertToRawIndexMinionClusterIntegrationTest extends HybridCluster
       for (OfflineSegmentZKMetadata offlineSegmentZKMetadata : _helixResourceManager
           .getOfflineSegmentMetadata(offlineTableName)) {
         Map<String, String> customMap = offlineSegmentZKMetadata.getCustomMap();
-        if (customMap == null || customMap.size() != 1 || !customMap
+        if (customMap == null || !customMap
             .containsKey(ConvertToRawIndexTask.TASK_TYPE + MinionConstants.TASK_TIME_SUFFIX)) {
           return false;
         }
